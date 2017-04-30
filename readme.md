@@ -1,6 +1,6 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bancer/REST-NodeJS-Express-Example/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bancer/REST-NodeJS-Express-Example/?branch=master)
 
-*** How to install ***
+# How to install
 
 Install dependencies. Execute in the console:
 
@@ -10,7 +10,7 @@ Install the database, the database user and data:
 
 * execute res/schema.sql and res/dump.sql in MySQL
 
-*** How to start ***
+# How to run
 
 Start the server app. Execute in the console:
 
