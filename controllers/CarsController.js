@@ -10,6 +10,7 @@ router.get('/', function(request, response) {
 		'LEFT JOIN users AS User ON Car.user_id=User.id ' +
 		'ORDER BY Car.id DESC';
 	MySQL.connection.query(sql, function(err, rows) {
+		var result;
 		if (err) {
 			console.log(err);
 			result = {
@@ -50,6 +51,7 @@ router.post('/', function(request, response) {
 		request.body.Car.construction_year
 	];
 	MySQL.connection.query(sql, values, function(err, rows) {
+		var result;
 		if (err) {
 			console.log(err);
 			result = {
@@ -70,6 +72,7 @@ router.get('/:id', function(request, response) {
 	var sql = "SELECT id, user_id, name, construction_year FROM cars WHERE id = ?";
 	var values = [request.params.id];
 	MySQL.connection.query(sql, values, function(err, rows) {
+		var result;
 		if (err) {
 			result = {
 				Error : true,
@@ -95,6 +98,7 @@ router.put('/:id', function(request, response) {
 		request.params.id
 	];
 	MySQL.connection.query(sql, values, function(err, rows) {
+		var result;
 		if (err) {
 			result = {
 				Error : true,
@@ -114,6 +118,7 @@ router.delete('/:id', function(request, response) {
 	var sql = "DELETE FROM cars WHERE id = ?";
 	var values = [request.params.id];
 	MySQL.connection.query(sql, values, function(err, rows) {
+		var result;
 		if (err) {
 			result = {
 				Error : true,
@@ -139,6 +144,7 @@ router.get('/user/:email', function(request, response) {
 		'ORDER BY Car.id DESC';
 	var values = [request.params.email];
 	MySQL.connection.query(sql, values, function(err, rows) {
+		var result;
 		if (err) {
 			console.log(err);
 			result = {
